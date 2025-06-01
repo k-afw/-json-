@@ -135,8 +135,10 @@
             // For future weeks, you would update this value, or implement a more dynamic system
             // to determine which week's JSON file to load (e.g., based on current date).
             const currentWeekStart = "2025-06-02"; // This corresponds to the JSON files you uploaded
-            const chineseZodiacWeeklyFilePath = `weekly_horoscope_chinese_zodiac_${currentWeekStart}.json`;
-            const westernZodiacWeeklyFilePath = `weekly_horoscope_western_zodiac_${currentWeekStart}.json`;
+            // === 변경된 부분: JSON 파일 경로를 Vercel 앱 URL로 지정 ===
+            const BASE_JSON_URL = "https://k-afw-json.vercel.app/"; 
+            const chineseZodiacWeeklyFilePath = `${BASE_JSON_URL}weekly_horoscope_chinese_zodiac_${currentWeekStart}.json`;
+            const westernZodiacWeeklyFilePath = `${BASE_JSON_URL}weekly_horoscope_western_zodiac_${currentWeekStart}.json`;
 
             let chineseWeeklyHoroscope = null;
             let westernWeeklyHoroscope = null;
